@@ -3,7 +3,7 @@
 #include <vector>
 #include <iomanip>
 
-#include "constant.h"
+#include "LIB.h"
 
 const int LayersNumD = 2;
 const int LayersNumG = 2;
