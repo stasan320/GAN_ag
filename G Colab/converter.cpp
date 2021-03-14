@@ -5,15 +5,15 @@
 
 std::string AddNull(int i){
         if (i < 10)
-            return "000000";
+            return "000000" + std::to_string(i);
         if (i > 9 && i < 100)
-            return "00000";
+            return "00000" + std::to_string(i);
         if (i > 99 && i < 1000)
-            return "0000";
+            return "0000" + std::to_string(i);
         if (i > 999 && i < 10000)
-            return "000";
+            return "000" + std::to_string(i);
         if (i > 9999 && i < 100000)
-            return "00";
+            return "00" + std::to_string(i);
 }
 
 int main() {
@@ -30,19 +30,7 @@ int main() {
     cv::Mat Fimage;
 
     for (int i = 0; i < 9999; i++) {
-        std::string d;
-        if (i < 10)
-            d = "000000";
-        if (i > 9 && i < 100)
-            d = "00000";
-        if (i > 99 && i < 1000)
-            d = "0000";
-        if (i > 999 && i < 10000)
-            d = "000";
-        if (i > 9999 && i < 100000)
-            d = "00";
-
-        Fimage = cv::imread("F:\\Foton\\!programdata\\вфеф\\images\\1\\"+ d + std::to_string(i) + ".png");
+        Fimage = cv::imread("F:\\Foton\\!programdata\\вфеф\\images\\1\\" + AddNull(i) + ".png");
         reb = MIN(Fimage.rows, Fimage.cols);
         cv::Mat frame(Fimage, cv::Rect(0, 0, reb, reb));
         cv::resize(frame, frame, cv::Size(512, 512));
