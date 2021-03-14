@@ -24,7 +24,6 @@ int main() {
     //double fps = 60;
     //cv::Size frameSize(512, 512);
     //writer = cv::VideoWriter(filename, fcc, fps, frameSize);
-    //writer.write(frame);
   
     int reb, k = 0;
     cv::Mat Fimage;
@@ -38,6 +37,8 @@ int main() {
             cv::imwrite("F:\\Foton\\!programdata\\вфеф\\images\\2\\" + std::to_string(i - k) + ".png", Fimage);
         else
             k++;
+            
+        //writer.write(frame);
     }
     return 0;
 }
